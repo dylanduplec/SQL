@@ -1,0 +1,46 @@
+CREATE TABLE artist (id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, age INTEGER);
+
+INSERT INTO artist (fullname, age) VALUES 
+("Caroline Polachek", 38);
+INSERT INTO artist (fullname, age) VALUES
+("Taylor Swift", 33);
+INSERT INTO artist (fullname, age) VALUES
+("Weyes Blood", 35);
+INSERT INTO artist (fullname, age) VALUES
+("Lorde", 26);
+
+CREATE TABLE about (id INTEGER PRIMARY KEY AUTOINCREMENT, people_id INTEGER, hometown TEXT, latest_album TEXT, monthly_listeners INTEGER);
+
+INSERT INTO about (people_id, hometown, latest_album, monthly_listeners) VALUES
+(1, "Manhattan", "Desire", 2179397);
+INSERT INTO about (people_id, hometown, latest_album, monthly_listeners) VALUES
+(2, "Reading", "1989 Taylor's Version", 100641196);
+INSERT INTO about (people_id, hometown, latest_album, monthly_listeners) VALUES
+(3, "Santa Monica", "And In The Darkness, Hearts Aglow", 1499934);
+INSERT INTO about (people_id, hometown, latest_album, monthly_listeners) VALUES
+(4, "New Zealand", "Solar Power", 20903649);
+
+SELECT artist.fullname AS artist, artist.age, about.hometown
+FROM artist
+JOIN about
+ON artist.id = about.people_id
+ORDER BY age;
+
+SELECT artist.fullname AS artist, about.latest_album, about.monthly_listeners
+FROM artist
+JOIN about
+ON artist.id = about.people_id
+ORDER BY monthly_listeners DESC;
+
+CREATE TABLE collaborations (id INTEGER PRIMARY KEY, collab1_id INTEGER, collab2_id INTEGER);
+
+INSERT INTO collaborations (collab1_id, collab2_id) VALUES
+(1, 2);
+INSERT INTO collaborations (collab1_id, collab2_id) VALUES
+(3, 4);
+
+SELECT a.fullname AS artist, b.fullname AS featuring FROM collaborations
+JOIN artist a
+ON collaborations.collab1_id = a.id
+JOIN artist b
+ON collaborations.collab2_id = b.id
