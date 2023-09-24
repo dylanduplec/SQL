@@ -1,20 +1,20 @@
 /* This project utilized data from the following clothing store dataset: */
-CREATE TABLE customers (id INTEGER PRIMARY KEY, name TEXT, age INTEGER, item TEXT, experience_rating TEXT);
+CREATE TABLE customers (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER, item TEXT, experience_rating TEXT);
 
-INSERT INTO customers VALUES (1, "Brian", 33, "pants", 6);
-INSERT INTO customers VALUES (2, "Brian", 33, "pants", 5);
-INSERT INTO customers VALUES (3, "Brian", 33, "shoes", 7);
-INSERT INTO customers VALUES (4, "Abby", 20, "necklace", 9);
-INSERT INTO customers VALUES (5, "Abby", 20, "pants", 9);
-INSERT INTO customers VALUES (6, "Abby", 20, "bracelet", 9);
-INSERT INTO customers VALUES (7, "Abby", 20, "ring", 10);
-INSERT INTO customers VALUES (8, "Kris", 24, "necklace", 8);
-INSERT INTO customers VALUES (9, "Kris", 24, "shirt", 9);
-INSERT INTO customers VALUES (10, "Sue", 35, "pants", 2);
-INSERT INTO customers VALUES (11, "Kevin", 40, "shirt", 4);
-INSERT INTO customers VALUES (12, "Haley", 19, "ring", 10);
-INSERT INTO customers VALUES (13, "Haley", 19, "bracelet", 10);
-INSERT INTO customers VALUES (14, "Chad", 30, "pants", 7);
-INSERT INTO customers VALUES (15, "Ryan", 48, "pants", 5);
+INSERT INTO customers VALUES ("Brian", 33, "pants", 6);
+INSERT INTO customers VALUES ("Brian", 33, "pants", 5);
+INSERT INTO customers VALUES ("Brian", 33, "shoes", 7);
+INSERT INTO customers VALUES ("Abby", 20, "necklace", 9);
+INSERT INTO customers VALUES ("Abby", 20, "pants", 9);
+INSERT INTO customers VALUES ("Abby", 20, "bracelet", 9);
+INSERT INTO customers VALUES ("Abby", 20, "ring", 10);
+INSERT INTO customers VALUES ("Kris", 24, "necklace", 8);
+INSERT INTO customers VALUES ("Kris", 24, "shirt", 9);
+INSERT INTO customers VALUES ("Sue", 35, "pants", 2);
+INSERT INTO customers VALUES ("Kevin", 40, "shirt", 4);
+INSERT INTO customers VALUES ("Haley", 19, "ring", 10);
+INSERT INTO customers VALUES ("Haley", 19, "bracelet", 10);
+INSERT INTO customers VALUES ("Chad", 30, "pants", 7);
+INSERT INTO customers VALUES ("Ryan", 48, "pants", 5);
 
 SELECT AVG(experience_rating) FROM customers WHERE age <30;
